@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <title>Heri Homes Property Developers</title>
+
+  
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/bootstrap.min.css' %} ">
+  <!-- magnific popup -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/magnific-popup/magnific-popup.css' %} ">
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/slick/slick.css' %} ">
+  <link rel="stylesheet" href="{% static 'assets/plugins/slick/slick-theme.css' %} ">
+  <!-- themify icon -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/themify-icons/themify-icons.css' %} ">
+  <!-- animate -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/animate/animate.css' %} ">
+  <!-- Aos -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/aos/aos.css' %} ">
+  <!-- Stylesheets -->
+  <link href="{% static 'assets/css/style.css' %} " rel="stylesheet">
+  <link href="{% static 'assets/css/custom.css' %} " rel="stylesheet">
+  
+  <!--Favicon-->
+  <link rel="shortcut icon" href="{% static 'images/favicon/android-icon-36x36.png' %} " type="image/x-icon">
+  <link rel="icon" href="{% static 'images/favicon/apple-icon.png' %} " type="image/x-icon">
+
+
+
+  {% block styles %}
+    <link href="{% static 'css/general.css' %} " rel="stylesheet">
+    {% endblock %}
+     {% block extrahead %}{% endblock %}
+
+     
+
+
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      {% block nav %}
+        
+      {% endblock %}
+    </div>
+  </div>
+    
+  {% block content %}
+
+
+    {% endblock %}
+    {% block footer %}
+        {% include "home/footer.html" %}
+      {% endblock %}

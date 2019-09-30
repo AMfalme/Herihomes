@@ -1,0 +1,7 @@
+.homepage-slider .hero-slider.slick-slider {
+    margin-bottom: 0;
+    height: 100vh;
+}
+.homepage-slider .slick-track{
+	height: 100vh;
+}
