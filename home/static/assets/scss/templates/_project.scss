@@ -139,3 +139,30 @@
 }
 
 /* project single page end */
+
+
+/*
+
+*/
+
+.section.portfolio{
+    p{
+        margin: 10px auto;
+        font-weight: 600;
+    }
+    i{
+            margin-right: 6px;
+            float: left;
+        }
+    .properties li{
+        width: 30%;
+        color: #6b8f6b;
+        font-size: 10px;
+        float: left;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+        padding: 5px;
+        margin-left: 0;
+        
+    }
+}

@@ -1,5 +1,7 @@
 /* 3. hero area */
-
+.slider{
+    margin-top: -94px;
+}
 .hero {
     &-slider {
         &.slick-slider{
@@ -11,7 +13,7 @@
         &-item {
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: cover;
+            background-size: 100% 100%;
             outline: 0;
         }
         .prevArrow,
@@ -136,6 +138,8 @@
     &-content {
         h4 {
             letter-spacing: 2px;
+            font-size: 15px;
+            color: #fff;
         }
     }
 }

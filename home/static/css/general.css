@@ -24,21 +24,12 @@ background-color: rgba(138, 187, 125, 0.05);
 .navbar-brand img{
 	width: 100px;
 }
-.navigation .navbar .nav-item .nav-link{
-	color: #fff;
-    font-size: 13px;
-    text-transform: capitalize;
-    font-weight: 500;
-    padding: 5px;
-}
 .navigation .navbar .nav-item.active .nav-link{
 	color: #ffffff;
     border-bottom: 2px solid #fff;
     
 }
-.navigation .navbar .nav-item {
-    padding: 5px 0;
-}
+
 
 .top-header ul li {
     margin: 3px;
@@ -54,21 +45,8 @@ background-color: rgba(138, 187, 125, 0.05);
 .navigation .navbar .nav-item .nav-link:hover {
     color: #ffc78d;
 }
-.slider{
-	margin-top: -140px;
-}
-.round-icon{
-	color: #71471b;
-}
-.section-title-border-half::after{
-	background: #71471b;
-}
-.section-title-border-half::before{
-	border-color: #71471b;
-}
-.section-title-border::before{
-	border-color: #71471b;	
-}
+
+
 .progress-bar{
 	background-color: rgba(88, 123, 0, 0.52);
 }
