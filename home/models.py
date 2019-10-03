@@ -68,8 +68,20 @@ class PortfolioPage(Page):
     FieldPanel('garage'),
     FieldPanel('floors'),
     ImageChooserPanel('project_image'),
+    InlinePanel('portfolio_images', label = "Project images")
     ]
-
+class portfolio_images(Orderable):
+    Page = ParentalKey(PortfolioPage, on_delete=models.CASCADE, related_name="portfolio_images")
+    tag = models.TextField(blank=True)
+    pitch = models.TextField(blank=True)
+    image = models.ForeignKey(
+    'wagtailimages.Image', on_delete=models.CASCADE,null= True, related_name='+'
+    )
+    panels = [
+    FieldPanel('tag'),
+    FieldPanel('pitch'),
+    ImageChooserPanel('image'),
+    ]
 class Testimonials(Orderable):
     Page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name = "Testimonials")
     client_quote = models.TextField(blank=True)

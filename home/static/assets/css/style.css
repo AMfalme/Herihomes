@@ -827,7 +827,9 @@ button {
     .navigation .navbar .dropdown-item {
       position: relative;
       color: #848484;
-      transition: .2s ease; }
+      transition: .2s ease;
+      font-size: 12px;
+      padding: 2px 20px; }
       .navigation .navbar .dropdown-item:not(:last-child) {
         margin-bottom: 20px; }
       .navigation .navbar .dropdown-item:hover {
@@ -948,9 +950,7 @@ button {
 .hero-slider:hover .prevArrow, .hero-slider:hover .nextArrow {
   opacity: 1; }
 .hero-slider .slick-dots {
-  bottom: -81px;
-  padding-left: 0;
-  text-align: center;
+  bottom: 0;
   border-bottom: 1px solid #e5e5e5; }
   .hero-slider .slick-dots li {
     width: 295px;
@@ -1219,7 +1219,7 @@ Customization of slider section
   z-index: 100;
   position: relative;
   text-align: center;
-  margin-top: 10vh; }
+  margin: 10vh auto; }
 
 .hero-content h1 {
   color: #fff; }
@@ -1260,6 +1260,13 @@ Customization of slider section
 
 .square-icon {
   background-color: #71471b !important; }
+
+.homepage-slider .hero-slider.slick-slider {
+  margin-bottom: 0;
+  height: 100vh; }
+
+.homepage-slider .slick-track {
+  height: 100vh; }
 
 /* 13. about section */
 .about {
@@ -1614,6 +1621,9 @@ img.arrow-bottom {
   text-align: left;
   padding: 5px;
   margin-left: 0; }
+
+.project-portfolio .project-image {
+  width: 100%; }
 
 /* 21.4.3 pagination */
 .pagination .page-item .page-link {
@@ -2012,57 +2022,6 @@ ul.tag-list li {
     border-color: #71471b; }
   .back-to-top:focus {
     outline: 0; }
-
-html {
-  box-sizing: border-box; }
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit; }
-
-body {
-  max-width: 960px;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 0 15px;
-  color: #231f20;
-  font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
-  line-height: 1.25; }
-
-a {
-  background-color: transparent;
-  color: #308282;
-  text-decoration: underline; }
-
-a:hover {
-  color: #ea1b10; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-ul {
-  padding: 0;
-  margin: 0;
-  font-weight: 400; }
-
-main {
-  display: block;
-  /* For IE11 support */ }
-
-svg:not(:root) {
-  overflow: hidden; }
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e6e6e6; }
 
 .logo {
   width: 150px;

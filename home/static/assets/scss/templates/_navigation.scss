@@ -173,6 +173,8 @@
                 position: relative;
                 color: #848484;
                 transition: .2s ease;
+                font-size:12px;
+                padding: 2px 20px;
 
                 &:not(:last-child) {
                     margin-bottom: 20px;

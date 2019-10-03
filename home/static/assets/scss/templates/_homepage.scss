@@ -259,7 +259,7 @@ Customization of slider section
     z-index: 100;
     position: relative;
     text-align: center;
-    margin-top: 10vh;
+    margin: 10vh auto;
 }
 
 .hero-content h1{
@@ -309,4 +309,12 @@ Customization of slider section
 }
 .square-icon{
 background-color: #71471b !important;   
+}
+
+.homepage-slider .hero-slider.slick-slider {
+    margin-bottom: 0;
+    height: 100vh;
+}
+.homepage-slider .slick-track{
+    height: 100vh;
 }
