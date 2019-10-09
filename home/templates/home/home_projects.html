@@ -1,6 +1,6 @@
 {% load static %}
 {% load wagtailcore_tags wagtailimages_tags %}
-{% for projects in page.get_children %}
+{% for projects in portfolios %}
 {% with projects=projects.specific %}
 {% image item.image max-1500x600 as photo %}
 <!-- service item -->
@@ -13,7 +13,7 @@
         <div class="card-body p-0">
             <div>
                 <p>
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt" style="margin-top: 6px;"></i>
                     {{ projects.location }}
                 </p>
             </div>

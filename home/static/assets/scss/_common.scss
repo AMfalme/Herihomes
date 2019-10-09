@@ -177,6 +177,9 @@ button {
 
 .section-title-border {
     position: relative;
+    font-weight: 100;
+    font-size: 22px;
+    text-transform: uppercase;
 
     &::before {
         position: absolute;

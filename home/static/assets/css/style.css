@@ -401,7 +401,10 @@ button {
     border-radius: 5px; }
 
 .section-title-border {
-  position: relative; }
+  position: relative;
+  font-weight: 100;
+  font-size: 22px;
+  text-transform: uppercase; }
   .section-title-border::before {
     position: absolute;
     content: '';
@@ -803,7 +806,7 @@ button {
       border: 0;
       border-radius: 0;
       top: 80%;
-      left: -20px;
+      left: -120px;
       display: block;
       visibility: hidden;
       transition: .3s ease;
@@ -910,13 +913,16 @@ button {
 
 .hero-slider.slick-slider {
   margin-bottom: 80px; }
+
 .hero-slider [data-animation-in] {
   opacity: 0; }
+
 .hero-slider-item {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 100%;
   outline: 0; }
+
 .hero-slider .prevArrow,
 .hero-slider .nextArrow {
   position: absolute;
@@ -943,12 +949,16 @@ button {
   .hero-slider .prevArrow:hover,
   .hero-slider .nextArrow:hover {
     background: rgba(113, 71, 27, 0.5); }
+
 .hero-slider .prevArrow {
   left: 20px; }
+
 .hero-slider .nextArrow {
   right: 20px; }
+
 .hero-slider:hover .prevArrow, .hero-slider:hover .nextArrow {
   opacity: 1; }
+
 .hero-slider .slick-dots {
   bottom: 0;
   border-bottom: 1px solid #e5e5e5; }
@@ -960,8 +970,8 @@ button {
     display: inline-block;
     position: relative;
     /* @include mobile-xs {
-        width: 50px;
-    } */ }
+                    width: 50px;
+                } */ }
     @media (max-width: 1199px) {
       .hero-slider .slick-dots li {
         width: 230px; } }
@@ -1019,6 +1029,7 @@ button {
         color: #fff; }
       .hero-slider .slick-dots li.slick-active::before {
         opacity: 1; }
+
 .hero-content h4 {
   letter-spacing: 2px;
   font-size: 15px;
@@ -1067,7 +1078,7 @@ button {
 
 /* 7. promo video section start */
 .promo-video {
-  background-position: center center;
+  background-position: 0 70%;
   background-repeat: no-repeat;
   background-size: cover; }
   .promo-video p {
@@ -1096,6 +1107,7 @@ button {
     right: 50px; }
   .testimonial-slider .slick-disabled {
     color: #e5e5e5; }
+
 .testimonial-icon {
   height: 80px;
   width: 80px;
@@ -1148,6 +1160,7 @@ button {
     top: 0;
     left: 0;
     transition: .2s; }
+
 .card-body-2 {
   position: relative;
   transition: .2s ease;
@@ -1162,8 +1175,10 @@ button {
     left: 50%;
     transform: translateX(-50%) rotate(-45deg);
     transition: .2s ease; }
+
 .card:hover .card-img-wrapper::before {
   opacity: .4; }
+
 .card:hover .card-body-2 {
   background: #71471b; }
   .card:hover .card-body-2 h5,
@@ -1267,6 +1282,9 @@ Customization of slider section
 
 .homepage-slider .slick-track {
   height: 100vh; }
+
+img.client {
+  width: 185px; }
 
 /* 13. about section */
 .about {
@@ -1399,6 +1417,7 @@ img.arrow-bottom {
     @media (max-width: 991px) {
       .service-menu li.active::before {
         display: none; } }
+
 .service-menu li:hover a {
   color: #fff !important;
   background: #303032; }
@@ -1606,12 +1625,16 @@ img.arrow-bottom {
 */
 .section.portfolio img {
   height: 200px; }
+
 .section.portfolio p {
   margin: 10px auto;
-  font-weight: 600; }
+  font-weight: 600;
+  width: 165px; }
+
 .section.portfolio i {
   margin-right: 6px;
   float: left; }
+
 .section.portfolio .properties li {
   width: 30%;
   color: #6b8f6b;
@@ -1635,8 +1658,10 @@ img.arrow-bottom {
   transition: .3s ease; }
   .pagination .page-item .page-link:hover {
     color: #71471b; }
+
 .pagination .page-item.active .page-link {
   color: #71471b; }
+
 .pagination .prev,
 .pagination .next {
   border: 1px solid #e5e5e5;
@@ -1649,8 +1674,10 @@ img.arrow-bottom {
     .pagination .prev:hover .page-link,
     .pagination .next:hover .page-link {
       color: #71471b; }
+
 .pagination .prev {
   margin-right: 30px; }
+
 .pagination .next {
   margin-left: 30px; }
 
@@ -2052,6 +2079,7 @@ ul.tag-list li {
   50% {
     -webkit-transform: rotate(6deg);
     transform: rotate(6deg); } }
+
 @keyframes pos {
   0%, 100% {
     -webkit-transform: rotate(-6deg);
@@ -2059,6 +2087,7 @@ ul.tag-list li {
   50% {
     -webkit-transform: rotate(6deg);
     transform: rotate(6deg); } }
+
 .egg {
   fill: #43b1b0;
   -webkit-animation: pos 3s ease infinite;
@@ -2115,20 +2144,21 @@ ul.tag-list li {
 @media (max-width: 996px) {
   body {
     max-width: 780px; } }
+
 @media (max-width: 767px) {
   .option {
     flex: 0 0 50%; } }
+
 @media (max-width: 599px) {
   .main {
     padding: 20px 0; }
-
   .figure-space {
     max-width: 200px; }
-
   .footer {
     display: block;
     width: 300px;
     margin: 0 auto; } }
+
 @media (max-width: 360px) {
   .header-link {
     max-width: 100px; } }

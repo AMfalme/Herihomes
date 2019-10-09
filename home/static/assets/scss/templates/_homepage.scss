@@ -52,7 +52,7 @@
 
 /* 7. promo video section start */
 .promo-video {
-    background-position: center center;
+    background-position: 0 70%;
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -317,4 +317,9 @@ background-color: #71471b !important;
 }
 .homepage-slider .slick-track{
     height: 100vh;
+}
+
+
+img.client{
+    width:185px;
 }

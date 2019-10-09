@@ -15,8 +15,10 @@ class HomePage(Page):
     def get_context(self, request):
         # Update context to include only published portolio projects, ordered by reverse-chron
         context = super().get_context(request)
-        portfolios = self.get_children().live().order_by('-first_published_at')
+        portfolios = self.get_children().live().type(PortfolioPage)
         context['portfolios'] = portfolios
+        context['menuitems'] = self.get_children().filter(
+        live=True, show_in_menus=True)
         return context
     
     content_panels = Page.content_panels + [
@@ -49,7 +51,7 @@ class SliderInfo(Orderable):
 class PortfolioPage(Page):
     body = RichTextField(blank=True)
     location = models.TextField(blank=True)
-    mosque = models.TextField(blank=True)
+    Squarefeet = models.TextField(blank=True)
     beds = models.TextField(blank=True)
     lifts =  models.BooleanField(default=False)
     baths = models.TextField(blank=True)
@@ -61,7 +63,7 @@ class PortfolioPage(Page):
     content_panels = Page.content_panels + [
     FieldPanel('body'),
     FieldPanel('location'),
-    FieldPanel('mosque'),
+    FieldPanel('Squarefeet'),
     FieldPanel('beds'),
     FieldPanel('lifts'),
     FieldPanel('baths'),
@@ -98,4 +100,12 @@ class Testimonials(Orderable):
     FieldPanel('client_testimony'),
     FieldPanel('client_name'),
     ImageChooserPanel('client_image')
+    ]
+
+
+
+class AboutPage(Page):
+    body = RichTextField(blank=True)    
+    content_panels = Page.content_panels + [
+    FieldPanel('body', classname="full"),
     ]
