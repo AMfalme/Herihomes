@@ -105,7 +105,13 @@ class Testimonials(Orderable):
 
 
 class AboutPage(Page):
-    body = RichTextField(blank=True)    
+    body = RichTextField(blank=True)
+    about_title = models.TextField(default="Affordable, Quality Housing")
+    approach = RichTextField(blank=True)
+    value_proposition = RichTextField(blank=True)
     content_panels = Page.content_panels + [
     FieldPanel('body', classname="full"),
+    FieldPanel('about_title'),
+    FieldPanel('approach'),
+    FieldPanel('value_proposition', classname="text-white")
     ]

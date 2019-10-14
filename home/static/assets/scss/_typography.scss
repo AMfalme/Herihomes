@@ -1,6 +1,6 @@
 /* 1.1 typography */
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:300,400,500,600,700|Work+Sans:400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Lato&display=swap');
 
 body {
   font-family: $primary-font;
@@ -12,7 +12,7 @@ body {
 p,.paragraph {
   font-weight: 400;
   color: $text-color;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 25px;
   font-family: $secondary-font;
 }
