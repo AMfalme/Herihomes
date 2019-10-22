@@ -1,0 +1,26 @@
+.search{
+	width: 60%;
+    margin: -20px auto 21px;
+    background-color: #fff;
+    position: relative;
+    padding: 40px 15px 25px 15px;
+    border-radius: 3px;
+    margin-bottom: -50px;
+    box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.12);
+    button{
+    min-width: 250px;
+    background-color: #726a63;
+    color: #fff;
+    &:hover{
+    	background-color: #9a6125;
+    }
+    }
+}
+
+.properties{
+	li{
+		display: inline-block;
+
+	}
+}
+

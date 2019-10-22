@@ -6,7 +6,7 @@ from wagtail.admin.edit_handlers import FieldPanel, InlinePanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from modelcluster.fields import ParentalKey
 from django import forms
-
+from wagtail.search import index
 
 
 
@@ -15,8 +15,9 @@ class HomePage(Page):
     def get_context(self, request):
         # Update context to include only published portolio projects, ordered by reverse-chron
         context = super().get_context(request)
-        portfolios = self.get_children().live().type(PortfolioPage)
-        context['portfolios'] = portfolios
+        portfolios = self.get_children().live().type(ProjectsPage)
+        # featured_projects = portfolios.get_children().filter(Featured = True)
+        # context['featured_projects'] = featured_projects
         context['menuitems'] = self.get_children().filter(
         live=True, show_in_menus=True)
         return context
@@ -47,25 +48,44 @@ class SliderInfo(Orderable):
     ]
 
 
-
 class PortfolioPage(Page):
+    body = RichTextField(blank=True)
+    def get_context(self, request):
+        context = super().get_context(request)
+        portfolios = self.get_children().live().type(ProjectsPage)
+        # featured_projects =self.get_children().filter(Featured = True)
+        context['portfolios'] = portfolios
+        # context['featured_projects'] = featured_projects
+        return context
+    content_panels = Page.content_panels + [
+    FieldPanel('body')
+    ]
+
+
+class ProjectsPage(Page):
     body = RichTextField(blank=True)
     location = models.TextField(blank=True)
     Squarefeet = models.TextField(blank=True)
     beds = models.TextField(blank=True)
     lifts =  models.BooleanField(default=False)
+    Featured = models.BooleanField(default=False)
     baths = models.TextField(blank=True)
     garage = models.TextField(default=True)
     floors = models.TextField(blank=True)
     project_image = models.ForeignKey(
     'wagtailimages.Image', on_delete=models.SET_NULL,null= True, related_name='+'
     )
+    search_fields = Page.search_fields + [
+        index.SearchField('body'),
+        index.FilterField('Featured'),
+    ]
     content_panels = Page.content_panels + [
     FieldPanel('body'),
     FieldPanel('location'),
     FieldPanel('Squarefeet'),
     FieldPanel('beds'),
     FieldPanel('lifts'),
+    FieldPanel('Featured'),
     FieldPanel('baths'),
     FieldPanel('garage'),
     FieldPanel('floors'),
@@ -73,7 +93,7 @@ class PortfolioPage(Page):
     InlinePanel('portfolio_images', label = "Project images")
     ]
 class portfolio_images(Orderable):
-    Page = ParentalKey(PortfolioPage, on_delete=models.CASCADE, related_name="portfolio_images")
+    Page = ParentalKey(ProjectsPage, on_delete=models.CASCADE, related_name="portfolio_images")
     tag = models.TextField(blank=True)
     pitch = models.TextField(blank=True)
     image = models.ForeignKey(
@@ -115,3 +135,4 @@ class AboutPage(Page):
     FieldPanel('approach'),
     FieldPanel('value_proposition', classname="text-white")
     ]
+

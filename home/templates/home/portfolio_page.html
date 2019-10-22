@@ -2,114 +2,129 @@
 {% load static %}
 {% load wagtailcore_tags wagtailimages_tags %}
 {% block body_class %}template-homepage{% endblock %}
-
 {% block extra_css %}
-
-
 <link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
 {% endblock extra_css %}
-
 {% block content %}
 {% include 'home/top-header.html' %}
-{% include 'home/header-nav.html' %} 
-    
-<section class="page-title overlay" style="margin-top: -200px;padding-top:300px;min-height: 600px; background-image: url(images/background/page-title.jpg);">
+{% include 'home/header-nav.html' %}
+<section class="page-title overlay" style="background-image: url(/static/images/390.jpg);">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="text-white font-weight-bold">Projects</h2>
+                <h2 class="text-white font-weight-bold">Our Portfolio</h2>
                 <ol class="breadcrumb">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>{{page.title}}</li>
+                    <li>{{page.body|richtext}}</li>
                 </ol>
             </div>
         </div>
     </div>
 </section>
-
-<!-- faqs -->
-<section class="section project-portfolio">
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-lg-7">
-            	{% image page.project_image max-700x300 class="project-image" %}
-            	 
-                <h3 class="mb-10">{{ page.title }}</h3>
-                <p class="mb-40">{{page.body|richtext}}</p>
-                <!-- nav tabs menu -->
-              <div class="col-lg-12">
-                <div class="project-menu text-center">
-                    <ul class="controls list-inline">
-                        <!-- filter item list -->
-                        <li class="list-inline-item control active" data-filter="all">All</li>
-                        <li class="list-inline-item control" data-filter=".Marketing-Online">After completion</li>
-                        <li class="list-inline-item control" data-filter=".Business-Strategy">During construction</li>
-                    </ul>
-                </div>
+<section class="search">
+    <form class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <input type="" name="" class="form-control" placeholder="Property Name">
+            </div>
+            <div class="col-md-2">
+                <select class="form-control" placeholder="Prefered specific location radius">
+                    <option>
+                        Nakuru
+                    </option>
+                    <option>
+                        Nairobi
+                    </option>
+                    <option>
+                        Mombasa
+                    </option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <input type="" name="" class="form-control" placeholder="Prefered specific location radius">
             </div>
             <div>
-        	<div class="row" data-ref="mixitup-container">
-        		{% for images in page.portfolio_images.all %}
-	            <div class="col-lg-4 col-md-4 col-sm-6 p-0 Business-Strategy" data-ref="mixitup-target">
-	                <div class="position-relative">
-	                    
-	                    {% image images.image fill-300x300 class="img-fluid w-100"  alt="project-image" %}
-	                    <div class="project-info">
-	                        <a href="project-single.html" class="h4">{{ images.tag }}</a>
-	                        <p>
-	                            <i class="ti-tag"></i>{{ images.pitch }}</p>
-	                    </div>
-	                </div>
-	            </div>
-	            {% endfor %}
-    		</div>
+                <button class=" col-md-3 form-control">
+                    Search
+                </button>
             </div>
-  			</div>
-            <div class="col-lg-5">
-                <div class="rounded p-5 box-shadow position-sticky" style="top:50px;">
-                	  <!-- overview -->
-                <div class="p-4 rounded border mb-50">
-                    <h4 class="text-color mb-20">Overview</h4>
-                    <ul class="pl-0 mb-20">
-                        <li class="py-3 border-bottom">
-                            <span class="d-inline-block" style="width: 140px; color: #a5a2a2;">Project Name:</span><span>{{page.title}}</span></li>
-                        <li class="py-3 border-bottom">
-                            <span class="d-inline-block" style="width: 140px; color: #a5a2a2;">Location:</span><span>{{page.location}}</span></li>
-                        <li class="py-3 border-bottom">
-                            <span class="d-inline-block" style="width: 140px; color: #a5a2a2;">Project type:</span><span>Land</span></li>
-                        <li class="py-3 border-bottom">
-                            <span class="d-inline-block" style="width: 140px; color: #a5a2a2;">Floor Area:</span><span>Mobile App</span></li>
-                        <li class="py-3 border-bottom">
-                            <span class="d-inline-block" style="width: 140px; color: #a5a2a2;">Total units:</span><span>{{page.floors}}</span></li>
-                    </ul>
-                    <a href="#" class="btn btn-primary">View more</a>
+        </div>
+    </form>
+</section>
+<section class="section portfolio">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+                <h5 class="section-title-sm">Featured Properties</h5>
+                <h3 class="section-title section-title-border"></h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    
+                </p>
+            </div>
+        </div>
+        <div class="row">
+{% include 'home/featured_projects.html' %}  
+         
+       
+        </div>
+
+    </div>
+</section>
+<section class="section projects">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h5 class="section-title-sm">All Properties</h5>
+                <h3 class="section-title section-title-border"></h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="category Completed active filter-btn" data-filter="all">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>Completed</h3>
+                    
                 </div>
-                
-               
-                    <!-- form -->
-                    <form action="#" class="row">
-                        <div class="col-lg-12">
-                            <h4 class="mb-20">Contact us</h4>
-                        </div>
-                        <div class="col-lg-12">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
-                        </div>
-                        <div class="col-lg-12">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required>
-                        </div>
-                        <div class="col-lg-12">
-                            <textarea name="question" id="question" class="form-control pt-2" placeholder="Your Question Here..." style="height: 130px;"></textarea>
-                        </div>
-                        <div class="col-lg-12">
-                            <button class="btn btn-primary" type="submit" value="send">Ask Question</button>
-                        </div>
-                    </form>
+            </div>
+            <div class="col-md-3">
+                <div class="category Ongoing filter-btn" data-filter=".ongoing">
+                    <i class="fas fa-tools"></i>
+                    <h3>Ongoing</h3>
+                    
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category Launched filter-btn" data-filter=".launched">
+                    <i class="fas fa-th-list"></i>
+                    <h3>Launched</h3>
+                    
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category Upcoming filter-btn" data-filter=".upcoming">
+                    <i class="fab fa-acquisitions-incorporated"></i>
+                    <h3>Upcoming</h3>
+                    
                 </div>
             </div>
         </div>
     </div>
+    <div class="container">
+      <div class="row" id="mix-wrapper">
+    {% include 'home/all_projects.html' %}
+    </div>  
+    </div>
 </section>
-<!-- /faqs -->
-      {% endblock %}
+
+
+
+
+{% endblock %}
+
+
