@@ -36,28 +36,36 @@
                             </a>
                            
                         </li>
+                        {% for menu in menuitems %}
+    
+   
+                       
                         <li class="nav-item">
-                            <a class="nav-link" href="/about" role="button"  aria-haspopup="true"
+                            <a class="nav-link" href="{{menu.url}}" role="button"  aria-haspopup="true"
                                 aria-expanded="false">
-                                
-                                About
+                                {{menu.title}}
                             </a>
                            
                         </li>
-                       
-                       
-                        <li class="nav-item ">
-                        <a class="nav-link " href="/our-portfolio" role="button"  aria-haspopup="true"
+                            {% endfor %}
+                       {% if portfolios %}
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
-                                Our Portfolio
+                                Projects
                             </a>
                             
 
+                            <div class="dropdown-menu" >
+                                {% for links in portfolios %}
+                                <a class="dropdown-item" href="{% pageurl links %}">{{links}}</a>
+                                {% endfor %}
+                            </div>
 
                         
                         
                     </li>
-                       
+                       {% endif %}
                         
                         
                     </ul>

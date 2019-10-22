@@ -282,4 +282,32 @@
     // AOS
     AOS.init();
 
+$('#mix-wrapper').mixItUp({
+  load: {
+    sort: 'order:asc'
+  },
+    animation: {
+    effects: 'fade',
+    duration: 700
+  },
+  selectors: {
+    target: '.mix-target',
+    filter: '.filter-btn',
+    sort: '.sort-btn'
+  },
+  callbacks: {
+    onMixEnd: function(state){
+      console.log(state)
+    }
+  }
+});
+
+
+
+
+
+
+
+
+
 })(jQuery);

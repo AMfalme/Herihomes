@@ -36,7 +36,7 @@ module.exports = function(grunt) {
             js: {
                 files: "js/*.js",
                 options: {
-                    livereload: true,
+                    livereload: 8001,
                 }
             }
         }
