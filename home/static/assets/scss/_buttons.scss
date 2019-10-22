@@ -5,7 +5,6 @@
     text-transform: capitalize;
     padding: 16px 44px;
     border-radius: 35px;
-    font-weight: 600;
     border: 0;
     position: relative;
     z-index: 1;
@@ -58,8 +57,9 @@
     color: $text-color-dark;
     border: 2px solid $secondary-color;
     &:hover{
-        background: $secondary-color;
+        background: $primary-color;
         color: $white;
+         border: 2px solid transparent;
     }
 }
 

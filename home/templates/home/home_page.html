@@ -10,7 +10,8 @@
 {% endblock extra_css %}
 
 {% block content %}
-
+{% include 'home/top-header.html' %}
+{% include 'home/header-nav.html' %}  
 {% include 'home/slider.html' %}
 
 <!-- skill -->
@@ -18,13 +19,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                 <h5 class="section-title-sm text-center">Our story</h5>
-                <h3 class="section-title-border">Welcome to Heri Homes</h3>
+                 <h5 class="section-title-sm text-center">Welcome to Heri Homes</h5>
+                <h3 class="section-title-border"></h3>
             </div>
             <div class="col-lg-7">
             	<div class="col-lg-12">
 	               
-	                <h2 class="section-title section-title-border-half">Why Choose Us</h2>
+	                <h2 class="section-title section-title-border-half">Our Story</h2>
 	            </div>
                 <div class="mb-40">
                     <p class="text-dark">For 9 years now, Heri Homes has made proud owners of homes and investments. </p>
@@ -110,8 +111,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12 text-center">
-                <h5 class="section-title-sm">portfolio</h5>
-                <h3 class="section-title section-title-border">Featured Properties</h3>
+                <h5 class="section-title-sm">Featured Properties</h5>
+                <h3 class="section-title section-title-border"></h3>
             </div>
             {% include 'home/home_projects.html' %}
         </div>
