@@ -913,7 +913,7 @@ button {
 
 /* 3. hero area */
 .slider {
-  margin-top: -94px; }
+  margin-top: -96px; }
 
 .hero-slider.slick-slider {
   margin-bottom: 80px; }
@@ -1678,7 +1678,7 @@ img.arrow-bottom {
     margin-top: 5px;
     color: #666; }
   .projects .active {
-    border-bottom: 3px solid #F4F7F9;
+    border-bottom: 3px solid #09202f;
     background-color: rgba(204, 219, 56, 0.35);
     padding-top: 20px; }
   .projects .Completed i {

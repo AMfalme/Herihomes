@@ -17,7 +17,7 @@ class HomePage(Page):
         context = super().get_context(request)
         portfolios = self.get_children().live().type(ProjectsPage)
         # featured_projects = portfolios.get_children().filter(Featured = True)
-        # context['featured_projects'] = featured_projects
+        context['portfolios'] = portfolios
         context['menuitems'] = self.get_children().filter(
         live=True, show_in_menus=True)
         return context
