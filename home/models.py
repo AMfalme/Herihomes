@@ -15,7 +15,7 @@ class HomePage(Page):
     def get_context(self, request):
         # Update context to include only published portolio projects, ordered by reverse-chron
         context = super().get_context(request)
-        portfolios = self.get_children().live().type(ProjectsPage)
+        portfolios = super().get_children().live().type(ProjectsPage)
         # featured_projects = portfolios.get_children().filter(Featured = True)
         context['portfolios'] = portfolios
         context['menuitems'] = self.get_children().filter(
@@ -33,7 +33,7 @@ class HomePage(Page):
 
 
 class SliderInfo(Orderable):
-    Page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name="Sliders")
+    page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name="Sliders")
     inftro_title = models.TextField(blank=True)
     intro_pitch = models.TextField(blank=True)
     pitch = models.TextField(blank=True)
