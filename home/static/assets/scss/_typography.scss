@@ -1,6 +1,6 @@
 /* 1.1 typography */
 
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Lato&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Lato&display=swap");
 
 body {
   font-family: $primary-font;
@@ -9,7 +9,8 @@ body {
   font-size: 15px;
 }
 
-p,.paragraph {
+p,
+.paragraph {
   font-weight: 400;
   color: $text-color;
   font-size: 15px;
@@ -17,35 +18,47 @@ p,.paragraph {
   font-family: $secondary-font;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: $text-color-dark;
   font-weight: 500;
-  font-family: $primary-font;
+  font-family: $secondary-font;
 }
 
-h1, .h1{
+h1,
+.h1 {
   font-size: 60px;
+  font-family: $secondary-font;
   @include mobile-xs {
-      font-size: 30px;
+    font-size: 30px;
   }
 }
 
-h2, .h2{
+h2,
+.h2 {
   font-size: 36px;
 }
 
-h3, .h3{
+h3,
+.h3 {
   font-size: 30px;
 }
 
-h4, .h4{
+h4,
+.h4 {
   font-size: 20px;
 }
 
-h5, .h5{
+h5,
+.h5 {
   font-size: 18px;
 }
 
-h6, .h6{
+h6,
+.h6 {
   font-size: 14px;
 }
