@@ -1,33 +1,33 @@
 {% load static %}
-{% load wagtailcore_tags wagtailimages_tags %}
-{% for projects in portfolios %}
-{% with projects=projects.specific %}
-{% image item.image max-1500x600 as photo %}
-<!-- service item -->
-<div class="col-lg-4 col-sm-6 mb-5">
-    <div class="card text-center">
-        <h4 class="card-title pt-3">{{ projects.title }}</h4>
-        <div class="card-img-wrapper">
-            <img class="card-img-top rounded-0" src="{% static 'images/aerialview.png' %}" alt="service-image">
-        </div>
-        <div class="card-body p-0">
-            <div>
-                <p>
-                    <i class="fas fa-map-marker-alt" style="margin-top: 6px;"></i>
-                    {{ projects.location }}
-                </p>
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-5">
+    <div class="card">
+        <div class="card-block block-1">
+            <h3 class="card-title">Corporate retreats</h3>
+            <p class="card-text"></p>
             </div>
-            <ul class="properties">
-                <li><i class="fas fa-mosque"></i>{{ projects.mosque }}</li>
-                <li><i class="fas fa-bed"></i>{{projects.beds}}</li>
-                {% if projects.lifts %}<li><i class="fab fa-500px"></i>Lifts</li>{% endif %}
-                <li><i class="fas fa-warehouse"></i>{{ projects.garage}}</li>
-                <li><i class="fas fa-bath"></i>{{ projects.baths }}</li>
-                <li><i class="far fa-building"></i>{{projects.floors}}</li>
-            </ul>
-            <a href="{% pageurl projects %}" class="btn btn-secondary translateY-25">More Details</a>
-        </div>
     </div>
 </div>
-{% endwith %}
-{% endfor %}
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-5">
+    <div class="card">
+        <div class="card-block block-1">
+            <h3 class="card-title">Vacation Homes</h3>
+            <p class="card-text"></p>
+            </div>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-5">
+    <div class="card">
+        <div class="card-block block-1">
+            <h3 class="card-title">Anniversaries and weddings</h3>
+            <p class="card-text"></p>
+            </div>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-5">
+    <div class="card">
+        <div class="card-block block-1">
+            <h3 class="card-title">Excursions</h3>
+            <p class="card-text"></p>
+            </div>
+    </div>
+</div>

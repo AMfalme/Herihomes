@@ -79,7 +79,28 @@ class ProjectsPage(Page):
         index.SearchField('body'),
         index.FilterField('Featured'),
     ]
+
+    class ProjectStatus(models.Model):
+        COUNTRIES = (
+            ('VA', 'Vacation Homes'),
+            ('EX', 'Excursion'),
+            ('Ann', 'Anniversary'),
+            ('Co', 'Corporate'),
+        )
+    
+        # note: using `models.TextField` here
+        def __str__(self):
+            return self.title
+
+
+    status = models.TextField(
+        max_length=1,
+        choices=ProjectStatus.COUNTRIES,
+        default="VA",
+    )
+
     content_panels = Page.content_panels + [
+    FieldPanel("status", widget=forms.Select), # note: using widget here
     FieldPanel('body'),
     FieldPanel('location'),
     FieldPanel('Squarefeet'),
