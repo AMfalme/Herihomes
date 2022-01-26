@@ -295,12 +295,16 @@ button {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 200px 0 100px;
+    padding: 200px 0 0;
     margin-top: -200px;
     padding-top:21%;
-    min-height: 800px;
     p{
     color: $white;
+    }
+}
+@media (min-width: 996px) {
+    .page-title {
+        padding-top: 250px;
     }
 }
 
