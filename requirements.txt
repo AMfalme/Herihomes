@@ -2,7 +2,7 @@ beautifulsoup4==4.6.0
 certifi==2019.9.11
 chardet==3.0.4
 Django==2.1
-django-cogwheels==0.2
+django-cogwheels==0.3
 django-modelcluster==4.4
 django-taggit==0.23.0
 django-treebeard==4.3
@@ -12,7 +12,7 @@ grunt-django==0.2.4
 html5lib==1.0.1
 idna==2.8
 Pillow==5.4.1
-pkg-resources==0.0.0
+psycopg2-binary==2.9.3
 pytz==2019.2
 requests==2.22.0
 six==1.12.0
@@ -21,6 +21,6 @@ Unidecode==1.1.1
 urllib3==1.25.3
 wagtail==2.4
 wagtail-condensedinlinepanel==0.5.2
-wagtailmenus==2.13.1
+wagtailmenus==3.0.2
 webencodings==0.5.1
 Willow==1.1

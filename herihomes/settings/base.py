@@ -94,10 +94,19 @@ WSGI_APPLICATION = 'herihomes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'OPTIONS': {
+            # 'service': 'my_service',
+            'passfile': '.my_pgpass',
+        },
+        'NAME':'staysinm_v1',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'USER': 'staysinm',
+        'PASSWORD': '123456',
     }
 }
 
@@ -168,7 +177,7 @@ EMAIL_HOST_PASSWORD = 'E8TcPC2z7C8v'
 
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = "herihomes"
+WAGTAIL_SITE_NAME = "staysinmombasa"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
