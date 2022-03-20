@@ -10,20 +10,28 @@ from wagtail.search import index
 
 
 
+class BasePage(Page):
+    meta_description = models.TextField(blank=True)
+    content_panels = Page.content_panels + [
+        FieldPanel('meta_description')
+    ]
+
 class HomePage(Page):
     body = RichTextField(blank=True)
+    meta_description = models.TextField(blank=True)
     def get_context(self, request):
         # Update context to include only published portolio projects, ordered by reverse-chron
         context = super().get_context(request)
-        portfolios = self.get_children().live().type(ProjectsPage)
-        # featured_projects = portfolios.get_children().filter(Featured = True)
-        context['portfolios'] = portfolios
+        destinations = self.get_children().live().type(VacationDestinationPage)
+        # featured_projects = destinations.get_children().filter(Featured = True)
+        context['destinations'] = destinations
         context['menuitems'] = self.get_children().filter(
         live=True, show_in_menus=True)
         return context
     
     content_panels = Page.content_panels + [
     FieldPanel('body', classname="full"),
+    FieldPanel('meta_description', ),
     InlinePanel('Sliders', label="Slider section"),
     InlinePanel('Testimonials', label="Testimonials")
 
@@ -41,6 +49,7 @@ class SliderInfo(Orderable):
     'wagtailimages.Image', on_delete=models.CASCADE,null= True, related_name='+'
     )
     panels = [
+    
     FieldPanel('inftro_title'),
     FieldPanel('intro_pitch'),
     FieldPanel('pitch'),
@@ -49,21 +58,25 @@ class SliderInfo(Orderable):
 
 
 class PortfolioPage(Page):
+    
     body = RichTextField(blank=True)
+    meta_description = models.TextField(blank=True)
     def get_context(self, request):
         context = super().get_context(request)
-        portfolios = self.get_children().live().type(ProjectsPage)
+        destinations = self.get_children().live().type(VacationDestinationPage)
         # featured_projects =self.get_children().filter(Featured = True)
-        context['portfolios'] = portfolios
+        context['destinations'] = destinations
         # context['featured_projects'] = featured_projects
         return context
     content_panels = Page.content_panels + [
-    FieldPanel('body')
+    FieldPanel('body'),
+    FieldPanel('meta_description', heading="meta description") 
     ]
 
 
-class ProjectsPage(Page):
+class VacationDestinationPage(Page):
     body = RichTextField(blank=True)
+    meta_description = models.TextField(blank=True)
     location = models.TextField(blank=True)
     Squarefeet = models.TextField(blank=True)
     beds = models.TextField(blank=True)
@@ -102,6 +115,7 @@ class ProjectsPage(Page):
     content_panels = Page.content_panels + [
     FieldPanel("status", widget=forms.Select), # note: using widget here
     FieldPanel('body'),
+    FieldPanel('meta_description', heading="meta desction"), 
     FieldPanel('location'),
     FieldPanel('Squarefeet'),
     FieldPanel('beds'),
@@ -111,10 +125,10 @@ class ProjectsPage(Page):
     FieldPanel('garage'),
     FieldPanel('floors'),
     ImageChooserPanel('project_image'),
-    InlinePanel('portfolio_images', label = "Project images")
+    InlinePanel('destination_images', label = "Project images")
     ]
-class portfolio_images(Orderable):
-    Page = ParentalKey(ProjectsPage, on_delete=models.CASCADE, related_name="portfolio_images")
+class destination_images(Orderable):
+    Page = ParentalKey(VacationDestinationPage, on_delete=models.CASCADE, related_name="destination_images")
     tag = models.TextField(blank=True)
     pitch = models.TextField(blank=True)
     image = models.ForeignKey(
@@ -147,13 +161,16 @@ class Testimonials(Orderable):
 
 class AboutPage(Page):
     body = RichTextField(blank=True)
+    meta_description = models.TextField(blank=True)
     about_title = models.TextField(default="Affordable, Quality Housing")
     approach = RichTextField(blank=True)
     value_proposition = RichTextField(blank=True)
     content_panels = Page.content_panels + [
+    FieldPanel('meta_description', heading="meta description"), 
     FieldPanel('body', classname="full"),
     FieldPanel('about_title'),
     FieldPanel('approach'),
+    
     FieldPanel('value_proposition', classname="text-white")
     ]
 
