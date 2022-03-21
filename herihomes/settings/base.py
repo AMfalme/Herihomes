@@ -101,8 +101,8 @@ DATABASES = {
         'NAME':'staysinm_v1',
         'HOST': 'localhost',
         'PORT': '5432',
-        'USER': 'staysinm_staysinm',
-        'PASSWORD': '123456',
+        'USER': 'staysinm',
+        'PASSWORD': 'rbT3i69C7mt0',
     }
 }
 
