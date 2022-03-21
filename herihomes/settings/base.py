@@ -102,7 +102,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
         'USER': 'staysinm',
-        'PASSWORD': 'rbT3i69C7mt0',
+        'PASSWORD': '0bV!yQ41g@uCP9',
     }
 }
 
