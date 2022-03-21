@@ -10,11 +10,7 @@ from wagtail.search import index
 
 
 
-class BasePage(Page):
-    meta_description = models.TextField(blank=True)
-    content_panels = Page.content_panels + [
-        FieldPanel('meta_description')
-    ]
+
 
 class HomePage(Page):
     body = RichTextField(blank=True)
