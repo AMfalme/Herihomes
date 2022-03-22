@@ -97,12 +97,9 @@ WSGI_APPLICATION = 'herihomes.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'staysinm_v1',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        'USER': 'staysinm',
-        'PASSWORD': '0bV!yQ41g@uCP9',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
     }
 }
 
