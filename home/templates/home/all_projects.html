@@ -4,11 +4,11 @@
 {% with projects=projects.specific %}
 {% image item.image max-1500x600 as photo %}
 <!-- service item -->
-<div class="col-lg-4 col-sm-6 mb-5  mix-target {{peojects.proj}}">
+<div class="col-lg-4 col-sm-6 mb-5  mix-target {{projects.status}}">
     <div class="card text-center">
         <h4 class="card-title pt-3">{{ projects.title }}</h4>
         <div class="card-img-wrapper">
-            <img class="card-img-top rounded-0" src="{% static 'images/aerialview.png' %}" alt="service-image">
+            {% image projects.project_image fill-400x200 class="card-img-top rounded-0" %}
         </div>
         <div class="card-body p-0">
             <div>

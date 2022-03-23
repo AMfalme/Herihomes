@@ -161,10 +161,23 @@ class AboutPage(Page):
     about_title = models.TextField(default="Affordable, Quality Housing")
     approach = RichTextField(blank=True)
     value_proposition = RichTextField(blank=True)
+    our_mission_title = models.TextField( default = "Reduced Cost")
+    our_mission = models.TextField( default = "Please fill here")
+    our_goal_title = models.TextField( default = "Affordability")
+    our_goal= models.TextField( default = "Please fill here")
+    our_vision_title = models.TextField( default = "Vision")
+    our_vision = models.TextField( default = "Please fill here")
     content_panels = Page.content_panels + [
     FieldPanel('meta_description', heading="meta description"), 
     FieldPanel('body', classname="full"),
     FieldPanel('about_title'),
+    FieldPanel('approach'),
+    FieldPanel('our_mission_title'),
+    FieldPanel('our_mission'),
+    FieldPanel('our_goal_title'),
+    FieldPanel('our_goal'),
+    FieldPanel('our_vision_title'),
+    FieldPanel('our_vision'),
     FieldPanel('approach'),
     
     FieldPanel('value_proposition', classname="text-white")
