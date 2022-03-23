@@ -28,6 +28,7 @@
 .process {
     &-item {
         width: 330px;
+        min-height: 330px;
 
         @include desktop-lg {
             width: unset;

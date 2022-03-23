@@ -1639,6 +1639,7 @@ img.story {
 /* 14.4 process */
 .process-item {
   width: 330px;
+  min-height: 330px;
 }
 @media (max-width: 1199px) {
   .process-item {
